@@ -9,7 +9,7 @@
             <v-spacer></v-spacer>
 
 
-            <v-btn flat round color="grey" class="hidden-sm-and-down">
+            <!-- <v-btn flat round color="grey" class="hidden-sm-and-down">
                 <span>Now Playing</span>
             </v-btn>
             <v-btn flat round color="grey" class="hidden-sm-and-down">
@@ -21,7 +21,7 @@
             <v-btn flat round color="grey" class="hidden-sm-and-down">
                 <span>Top Rated</span>
             </v-btn>
-            <v-spacer></v-spacer>
+            <v-spacer></v-spacer> -->
              
 
             <v-btn flat round color="grey">

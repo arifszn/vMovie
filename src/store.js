@@ -1,16 +1,13 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+import movieDetails from './store/modules/movieDetails';
+
+Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
+    modules: {
+        movieDetails
+    }
+});
 
-  },
-  mutations: {
-
-  },
-  actions: {
-
-  }
-})

@@ -21,4 +21,4 @@ yarn-error.log*
 *.sw?
 
 # custom
-apiKeys.js
+secret.js

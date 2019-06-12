@@ -1,40 +1,108 @@
 <template>
  <div class="home">
-    <h1 class="subheading grey--text">Home</h1>
-
-    <v-container class="my-5">
-      <v-layout row wrap>
-        <v-flex xs6 sm6 md3 lg2 v-for="person in team" :key="person.name">
-          <v-card flat class="text-xs-center ma-3">
-            <v-responsive>
-              <v-img src="/godzilla.jpg" ></v-img>
-            </v-responsive>
-            <v-card-text>
-              <div class="grey--text">{{ person.role }}</div>
-            </v-card-text>
-          </v-card>
-        </v-flex>
-
+    <v-container class="my-1 animated zoomIn">
+      <v-layout row wrap class="grey lighten-5">
+        <v-card-text small class="text-xs">
+            <div class="grey--text">
+              <h2 class="left">Latest Movies</h2> <p class="right" style="cursor: pointer;">View All</p>
+            </div> 
+        </v-card-text>
+        <Movie-Item v-for="latestMovie in latestMovies" :key="latestMovie.id" :movie="latestMovie"></Movie-Item>
       </v-layout>
     </v-container>
+
+    <v-container class="my-1 animated zoomIn">
+      <v-layout row wrap class="grey lighten-5">
+        <v-card-text small class="text-xs">
+            <div class="grey--text">
+              <h2 class="left">Top Rated Movies</h2> <p class="right" style="cursor: pointer;">View All</p>
+            </div> 
+        </v-card-text>
+        <Movie-Item v-for="topRatedMovie in topRatedMovies" :key="topRatedMovie.id" :movie="topRatedMovie"></Movie-Item>
+      </v-layout>
+    </v-container>
+
+    <v-container class="my-1 animated zoomIn">
+      <v-layout row wrap class="grey lighten-5">
+        <v-card-text small class="text-xs">
+            <div class="grey--text">
+              <h2 class="left">Upcoming Movies</h2> <p class="right" style="cursor: pointer;">View All</p>
+            </div> 
+        </v-card-text>
+        <Movie-Item v-for="upcomingMovie in upcomingMovies" :key="upcomingMovie.id" :movie="upcomingMovie"></Movie-Item>
+      </v-layout>
+    </v-container>
+
+    <v-container class="my-1 animated zoomIn">
+      <v-layout row wrap class="grey lighten-5">
+        <v-card-text small class="text-xs">
+            <div class="grey--text">
+              <h2 class="left">Popular Movies</h2> <p class="right" style="cursor: pointer;">View All</p>
+            </div> 
+        </v-card-text>
+        <Movie-Item v-for="popularMovie in popularMovies" :key="popularMovie.id" :movie="popularMovie"></Movie-Item>
+      </v-layout>
+    </v-container>
+    <Movie-Details></Movie-Details>
   </div>
 </template>
 
 <script>
+import secret from '../secret.js'
+import MovieItem from '../components/MovieItem.vue'
+import MovieDetails from '../components/MovieDetails.vue'
 
   export default {
     data() {
       return {
-        team: [
-        { name: 'John Doe', role: 'Web developer', avatar: '/avatar-1.png' },
-        { name: 'Miles Morales', role: 'Graphics designer', avatar: '/avatar-2.png' },
-        { name: 'Clark Kent', role: 'Software Engineer', avatar: '/avatar-3.png' },
-        { name: 'Peter Parker', role: 'Web developer', avatar: '/avatar-4.png' },
-        { name: 'Peter Parker', role: 'Web developer', avatar: '/avatar-4.png' },
-
-      ]
+        latestMovies: [],
+        topRatedMovies: [],
+        upcomingMovies: [],
+        popularMovies: [],
+        
       }
+    },
+    components: {
+      MovieItem: MovieItem,
+      MovieDetails: MovieDetails
+
+    },
+    created() {
+      // GET latest movies from tmdb 
+      this.$http.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${secret.tmdbApiKey}&language=en-US&page=1`).then(response => {
+        this.latestMovies = response.body.results.slice(0, 6);
+        
+      }, response => {
+        console.log(response);
+      });
+
+      // GET top rated movies from tmdb 
+      this.$http.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${secret.tmdbApiKey}&language=en-US&page=1`).then(response => {
+        this.topRatedMovies = response.body.results.slice(0, 6);
+        
+      }, response => {
+        console.log(response);
+      });
+
+      // GET upcoming movies from tmdb 
+      this.$http.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=${secret.tmdbApiKey}&language=en-US&page=1`).then(response => {
+        this.upcomingMovies = response.body.results.slice(0, 6);
+        
+      }, response => {
+        console.log(response);
+      });
+
+      // GET popular movies from tmdb 
+      this.$http.get(`https://api.themoviedb.org/3/movie/popular?api_key=${secret.tmdbApiKey}&language=en-US&page=1`).then(response => {
+        this.popularMovies = response.body.results.slice(0, 6);
+        
+      }, response => {
+        console.log(response);
+      });
+      
     }
+
+    
   }
 </script>
 
