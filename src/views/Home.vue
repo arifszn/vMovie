@@ -43,7 +43,7 @@
         <Movie-Item v-for="popularMovie in popularMovies" :key="popularMovie.id" :movie="popularMovie"></Movie-Item>
       </v-layout>
     </v-container>
-    <Movie-Details></Movie-Details>
+    <Movie-Details v-if="this.$store.getters.getMovieDetailsButtonStatus"></Movie-Details>
   </div>
 </template>
 

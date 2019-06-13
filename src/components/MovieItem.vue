@@ -1,6 +1,6 @@
 
 <template>
-    <v-flex xs6 sm6 md3 lg2 class="mb-3" id="movieCard" @click="openPopup">
+    <v-flex xs6 sm6 md3 lg2 class="mb-3" id="movieCard" @click="openPopup(movie.id)">
         <v-card flat class="text-xs-center mt-3 ml-3 mr-3 elevation-15">
         <v-responsive>
             <v-img :src="`https://image.tmdb.org/t/p/w370_and_h556_bestv2${ movie.poster_path }`" ></v-img>
@@ -21,9 +21,8 @@ export default {
         MovieDetails: MovieDetails
     },
     methods: {
-        openPopup() {
-            console.log('OPEN POP UP');
-            this.$store.dispatch('movieDetailsButtonPressed');
+        openPopup(movieId) {
+            this.$store.dispatch('movieDetailsButtonPressed', movieId);
                 
         }
     }

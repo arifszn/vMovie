@@ -1,21 +1,21 @@
 const state = {
-    isMovieDetailsButtonPress: false
+    isMovieDetailsButtonPress: false,
+    movieId: null
 };
 
 const mutations = {
-    'MOVIE_DETAILS_BUTTON_PRESSED' (state) {
+    'MOVIE_DETAILS_BUTTON_PRESSED' (state, movieId) {
         state.isMovieDetailsButtonPress = true;
-        console.log(state.isMovieDetailsButtonPress);
+        state.movieId = movieId;
     },
     'MOVIE_DETAILS_BUTTON_CLOSED' (state) {
         state.isMovieDetailsButtonPress = false;
-        console.log(state.isMovieDetailsButtonPress);
     }
 };
 
 const actions = {
-    movieDetailsButtonPressed: ({commit}) => {
-        commit('MOVIE_DETAILS_BUTTON_PRESSED');
+    movieDetailsButtonPressed: ({commit}, movieId) => {
+        commit('MOVIE_DETAILS_BUTTON_PRESSED', movieId);
         
     },
     movieDetailsButtonClosed: ({commit}) => {
@@ -27,6 +27,9 @@ const actions = {
 const getters = {
     getMovieDetailsButtonStatus: state => {
         return state.isMovieDetailsButtonPress;
+    },
+    getMoviePopupId: state => {
+        return state.movieId;
     }
 };
 
