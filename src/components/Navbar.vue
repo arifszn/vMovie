@@ -69,7 +69,7 @@
                 </v-list-tile>
                 <v-list-tile router :to="{name: 'movies-category', params: {category: 'now_playing'} }">
                     <v-list-tile-action>
-                        <v-icon class="white--text">arrow_right_alt</v-icon>
+                        <v-icon class="white--text">local_movies</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                         <v-list-tile-title class="white--text">LATEST MOVIES</v-list-tile-title>
@@ -77,7 +77,7 @@
                 </v-list-tile>
                 <v-list-tile router :to="{name: 'movies-category', params: {category: 'top_rated'} }">
                     <v-list-tile-action>
-                        <v-icon class="white--text">arrow_right_alt</v-icon>
+                        <v-icon class="white--text">local_movies</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                         <v-list-tile-title class="white--text">TOP RATED MOVIES</v-list-tile-title>
@@ -85,7 +85,7 @@
                 </v-list-tile>
                 <v-list-tile router :to="{name: 'movies-category', params: {category: 'upcoming'} }">
                     <v-list-tile-action>
-                        <v-icon class="white--text">arrow_right_alt</v-icon>
+                        <v-icon class="white--text">local_movies</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                         <v-list-tile-title class="white--text">UPCOMING MOVIES</v-list-tile-title>
@@ -93,7 +93,7 @@
                 </v-list-tile>
                 <v-list-tile router :to="{name: 'movies-category', params: {category: 'popular'} }">
                     <v-list-tile-action>
-                        <v-icon class="white--text">arrow_right_alt</v-icon>
+                        <v-icon class="white--text">local_movies</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                         <v-list-tile-title class="white--text">POPULAR MOVIES</v-list-tile-title>
