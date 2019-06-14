@@ -1,6 +1,6 @@
 <template>
     <div class="viewAllMovies">
-    <v-container class="my-1 animated zoomIn">
+    <v-container class="my-1">
       <v-layout row wrap class="grey lighten-5">
         <v-card-text small class="text-xs">
             <div class="grey--text">

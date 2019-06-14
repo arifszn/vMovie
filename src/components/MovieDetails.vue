@@ -54,33 +54,7 @@
             </v-card-actions>
           </v-card>
         </v-flex>
-      </div>
-
-      
-        <!--   <v-card>
-            <v-card-title
-              class="headline grey lighten-2"
-              primary-title
-            >
-              {{ movieId }}
-            </v-card-title>
-  
-            <v-img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/v4yVTbbl8dE1UP2dWu5CLyaXOku.jpg" weight="100" height="200"></v-img>
-  
-            <v-divider></v-divider>
-  
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn
-                color="primary"
-                flat
-                @click="closePopup"
-              >
-                Close
-              </v-btn>
-            </v-card-actions>
-          </v-card> -->
-        
+      </div>    
     </v-dialog>
     
   </div>
