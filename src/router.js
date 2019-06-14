@@ -24,6 +24,7 @@ export default new Router({
       path: '/movies/:category',
       name: 'movies-category',
       component: ViewAllMovies
-    }
+    },
+    { path: '*', redirect: '/' }
   ]
 })

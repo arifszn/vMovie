@@ -4,9 +4,8 @@
     <v-dialog
       v-model="dialog"
       width="680px"
-      
     > 
-      <div class="mainDiv" v-if="detailsLoaded">
+      <div class="mainDiv animated zoomIn" v-if="detailsLoaded">
         <v-flex >
           <v-card>
             <v-img
