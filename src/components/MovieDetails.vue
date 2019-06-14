@@ -1,13 +1,12 @@
 <template>
   <div class="text-xs-center">
-    
+    <div class="lds-ripple loading" v-if="!detailsLoaded"><div></div><div></div></div>
     <v-dialog
       v-model="dialog"
       width="680px"
       
     > 
       <div class="mainDiv" v-if="detailsLoaded">
-        
         <v-flex >
           <v-card>
             <v-img
@@ -24,6 +23,7 @@
                     <v-flex  class="mt-5 ml-3">
                       <v-card flat class="" width="200px">
                         <v-responsive>
+                          
                             <v-img :src="`https://image.tmdb.org/t/p/w370_and_h556_bestv2${ movie.poster_path }`" ></v-img>
                         </v-responsive>
                       </v-card>
@@ -36,7 +36,7 @@
                   </v-flex>
 
                   <v-flex align-start flexbox>
-                    <v-flex  class="mt-5 ml-3">
+                    <v-flex  class="mt-5 ml-3" style="position:relative">
                         <div class="black--text title" >{{ movie.title }}</div>
                         <span class="grey--text"><strong>Genre:</strong> {{ getGenre(movie.genres) }}</span> <br>
                         <span class="grey--text"><strong>Rating:</strong> {{ movie.vote_average }}</span> <br>
@@ -83,6 +83,7 @@
           </v-card> -->
         
     </v-dialog>
+    
   </div>
 </template>
 
@@ -95,7 +96,7 @@ import secret from '../secret.js'
         dialog: false,
         movieId: null,
         movie: [],
-        detailsLoaded: false
+        detailsLoaded: false,
       }
     },
     methods : {
@@ -133,7 +134,59 @@ import secret from '../secret.js'
 <style scoped>
   #myImage {
     background-size: cover;
-    opacity: 0.2;  
+    opacity: 0.2; 
+    
   }
+
+  @media only screen and (max-width: 600px) {
+    #myImage {
+      opacity: 0;
+    }
+  }
+  
+  /* Absolute Center Spinner */
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: visible;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 28px;
+}
+
+
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fed;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 28px;
+    left: 28px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -1px;
+    left: -1px;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+  }
+}
+
+
+
 </style>
 

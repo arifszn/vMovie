@@ -1,6 +1,6 @@
 
 <template>
-    <v-flex xs6 sm6 md3 lg2 class="mb-3" id="movieCard" @click="openPopup(movie.id)">
+    <v-flex xs6 sm6 md2 lg2 class="mb-3" id="movieCard" @click="openPopup(movie.id)">
         <v-card flat class="text-xs-center mt-3 ml-3 mr-3 elevation-15">
         <v-responsive>
             <v-img :src="`https://image.tmdb.org/t/p/w370_and_h556_bestv2${ movie.poster_path }`" ></v-img>

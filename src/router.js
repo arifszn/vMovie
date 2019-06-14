@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import ViewAllMovies from './views/ViewAllMovies.vue'
 import Error from './components/Error.vue'
 
 Vue.use(Router)
@@ -19,5 +20,10 @@ export default new Router({
       name: 'error',
       component: Error
     },
+    {
+      path: '/movies/:category',
+      name: 'movies-category',
+      component: ViewAllMovies
+    }
   ]
 })
