@@ -11,6 +11,6 @@ A movie info website made with Vue.js, Vuetify, Vuex. This site uses TMDB api fo
 <br />
 
 ***
-![alt text](https://raw.githubusercontent.com/arifszn/stock-trader/master/public/Screenshot(02).jpg)
+![alt text](https://raw.githubusercontent.com/arifszn/vMovie/master/public/Screenshot(02).jpg)
 <br />
-<br />
+
