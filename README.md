@@ -1,29 +1,16 @@
-# vdiary
+# vMovie
 
-## Project setup
-```
-npm install
-```
+A movie info website made with Vue.js, Vuetify, Vuex. This site uses TMDB api for movie database.(www.themoviedb.org)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Demo
+[https://vmovie.surge.sh/](https://vmovie.surge.sh/)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Screenshots
+![alt text](https://raw.githubusercontent.com/arifszn/vMovie/master/public/Screenshot(01).jpg)
+<br />
+<br />
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+***
+![alt text](https://raw.githubusercontent.com/arifszn/stock-trader/master/publicScreenshot(02).jpg)
+<br />
+<br />
