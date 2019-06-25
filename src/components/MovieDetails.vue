@@ -5,18 +5,26 @@
       v-model="dialog"
       width="680px"
     > 
-      <div class="mainDiv animated zoomIn" v-if="detailsLoaded">
+      <div class="mainDiv" v-if="detailsLoaded">
         <v-flex >
           <v-card>
             <v-img
+            v-if="movie.backdrop_path"
               class="white--text"
-              
               :src="`https://image.tmdb.org/t/p/w500${ movie.backdrop_path }`"
               id="myImage"
             >
             </v-img>
+
+            <v-img
+            v-else
+              class="white--text"
+              src="defaultBg.jpg"
+              id="myImage"
+            >
+            </v-img>
             
-              <v-container fill-height fluid style="margin-top: -52%; ">
+              <v-container fill-height fluid style="margin-top: -52%; " >
                 <v-layout fill-height>
                   <v-flex  align-end flexbox>
                     <v-flex  class="mt-5 ml-3">
