@@ -12,7 +12,7 @@
             v-if="movie.backdrop_path"
               class="white--text"
               :src="`https://image.tmdb.org/t/p/w500${ movie.backdrop_path }`"
-              lazy-src="defaultBg.jpg"
+              lazy-src="https://raw.githubusercontent.com/arifszn/vMovie/master/public/defaultBg.jpg"
               id="myImage"
             >
             </v-img>
@@ -20,7 +20,7 @@
             <v-img
             v-else
               class="white--text"
-              src="defaultBg.jpg"
+              src="https://raw.githubusercontent.com/arifszn/vMovie/master/public/defaultBg.jpg"
               id="myImage"
             >
             </v-img>
