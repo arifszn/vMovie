@@ -12,6 +12,7 @@
             v-if="movie.backdrop_path"
               class="white--text"
               :src="`https://image.tmdb.org/t/p/w500${ movie.backdrop_path }`"
+              lazy-src="defaultBg.jpg"
               id="myImage"
             >
             </v-img>
