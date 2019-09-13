@@ -47,7 +47,7 @@ import MovieDetails from '../components/MovieDetails.vue'
     methods: {
       loadNextPage() {
         this.movieInfo.page++;
-        this.$http.get(`https://api.themoviedb.org/3/movie/${ this.$route.params.category }?api_key=${secret.tmdbApiKey}&language=en-US&page=${ this.movieInfo.page }&region=us`).then(response => {
+        this.$http.get(`https://api.themoviedb.org/3/movie/${ this.$route.params.category }?api_key=${secret.tmdbApiKey}&language=en-US&page=${ this.movieInfo.page }&region=US`).then(response => {
           this.allMovies = response.body.results;
           
         }, response => {
@@ -56,7 +56,7 @@ import MovieDetails from '../components/MovieDetails.vue'
       },
       loadPreviousPage() {
         this.movieInfo.page--;
-        this.$http.get(`https://api.themoviedb.org/3/movie/${ this.$route.params.category }?api_key=${secret.tmdbApiKey}&language=en-US&page=${ this.movieInfo.page }&region=us`).then(response => {
+        this.$http.get(`https://api.themoviedb.org/3/movie/${ this.$route.params.category }?api_key=${secret.tmdbApiKey}&language=en-US&page=${ this.movieInfo.page }&region=US`).then(response => {
           this.allMovies = response.body.results;
           
         }, response => {
@@ -69,7 +69,7 @@ import MovieDetails from '../components/MovieDetails.vue'
         // react to route changes...
 
         // GET all movies by category
-        this.$http.get(`https://api.themoviedb.org/3/movie/${ this.$route.params.category }?api_key=${secret.tmdbApiKey}&language=en-US&page=1&region=us`).then(response => {
+        this.$http.get(`https://api.themoviedb.org/3/movie/${ this.$route.params.category }?api_key=${secret.tmdbApiKey}&language=en-US&page=1&region=US`).then(response => {
           this.allMovies = response.body.results;
           
         }, response => {
@@ -89,7 +89,7 @@ import MovieDetails from '../components/MovieDetails.vue'
     },
     created() {
         // GET all movies by category
-        this.$http.get(`https://api.themoviedb.org/3/movie/${ this.$route.params.category }?api_key=${secret.tmdbApiKey}&language=en-US&page=1&region=us`).then(response => {
+        this.$http.get(`https://api.themoviedb.org/3/movie/${ this.$route.params.category }?api_key=${secret.tmdbApiKey}&language=en-US&page=1&region=US`).then(response => {
           this.allMovies = response.body.results;
           
         }, response => {

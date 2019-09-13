@@ -47,7 +47,7 @@
                     <v-flex  class="mt-5 ml-3" style="position:relative">
                         <div class="black--text title" >{{ movie.title }}</div>
                         <span class="grey--text"><strong>Genre:</strong> {{ getGenre(movie.genres) }}</span> <br>
-                        <span class="grey--text"><strong>Rating:</strong> {{ movie.vote_average }}</span> <br>
+                        <span class="grey--text"><strong>Rating:</strong> {{ movie.vote_average == '0' ? 'Not Yet Rated' : movie.vote_average }}</span> <br>
                         <br>
                         <v-card-text small style="padding: 0;  text-align: justify; text-justify: inter-word;">
                             <div class="black--text small">{{ movie.overview }}</div>

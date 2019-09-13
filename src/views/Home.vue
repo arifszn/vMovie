@@ -82,7 +82,7 @@ import MovieDetails from '../components/MovieDetails.vue'
     },
     created() {
       // GET latest movies from tmdb 
-      this.$http.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${secret.tmdbApiKey}&language=en-US&page=1&region=us`).then(response => {
+      this.$http.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${secret.tmdbApiKey}&language=en-US&page=1&region=US`).then(response => {
         this.latestMovies = response.body.results.slice(0, 6);
         
       }, response => {
@@ -90,7 +90,7 @@ import MovieDetails from '../components/MovieDetails.vue'
       });
 
       // GET top rated movies from tmdb 
-      this.$http.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${secret.tmdbApiKey}&language=en-US&page=1&region=us`).then(response => {
+      this.$http.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${secret.tmdbApiKey}&language=en-US&page=1&region=US`).then(response => {
         this.topRatedMovies = response.body.results.slice(0, 6);
         
       }, response => {
@@ -98,7 +98,7 @@ import MovieDetails from '../components/MovieDetails.vue'
       });
 
       // GET upcoming movies from tmdb 
-      this.$http.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=${secret.tmdbApiKey}&language=en-US&page=1&region=us`).then(response => {
+      this.$http.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=${secret.tmdbApiKey}&language=en-US&page=1&region=US`).then(response => {
         this.upcomingMovies = response.body.results.slice(0, 6);
         
       }, response => {
@@ -106,7 +106,7 @@ import MovieDetails from '../components/MovieDetails.vue'
       });
 
       // GET popular movies from tmdb 
-      this.$http.get(`https://api.themoviedb.org/3/movie/popular?api_key=${secret.tmdbApiKey}&language=en-US&page=1&region=us`).then(response => {
+      this.$http.get(`https://api.themoviedb.org/3/movie/popular?api_key=${secret.tmdbApiKey}&language=en-US&page=1&region=US`).then(response => {
         this.popularMovies = response.body.results.slice(0, 6);
         
       }, response => {
